@@ -1,0 +1,85 @@
+* {
+  font-family: SpaceGrotesk;
+}
+
+#mgn {
+  // ###### FONTS ######
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 30px;
+    font-weight: normal;
+  }
+  h4 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+  h5 {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  h6 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  p.normal-text {
+    font-size: 20px;
+  }
+
+  a.link {
+    font-size: 20px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  .info-message {
+    font-family: SpaceGrotesk;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #242424;
+  }
+  .info-message {
+    font-size: 14px;
+    color: #6d6e71;
+  }
+  //   ##### UI ########
+
+  .highlight-chip {
+    border-radius: 12px;
+    padding: 2px 16px 0;
+    background-color: #8888fd;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .container:not(.container--fluid) {
+    max-width: 1262px;
+  }
+  //   ###### BUTTONS ######
+
+  .action-btn {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 12px 22px;
+    height: 42px;
+    background-color: rgb(36, 36, 36);
+    border-color: rgb(36, 36, 36);
+    .v-btn__content {
+      color: white;
+    }
+  }
+}

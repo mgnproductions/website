@@ -1,61 +1,27 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+  <v-app id="mgn">
+    <v-app-bar :clipped-left="clipped" fixed app :height="78" elevation="0">
+      <MgnLogo></MgnLogo>
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
+      <a class="header-link"> Quem Somos </a>
+
+      <a class="header-link"> Comunidade </a>
+
+      <a class="header-link"> MGN tokens </a>
+
+      <a class="header-link"> Colecções NFTs </a>
+      <v-spacer />
+
+      <v-btn class="action-btn" :ripple="false" color="#242424">
+        RECEBE MGN TOKENS
+        <IconArrowDown class="ml-2"></IconArrowDown>
       </v-btn>
     </v-app-bar>
     <v-main>
-      <v-container>
+      <div>
         <Nuxt />
-      </v-container>
+      </div>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer :absolute="!fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
@@ -63,8 +29,12 @@
 </template>
 
 <script>
+import MgnLogo from '~/assets/svg/mgn-logo.vue'
+import IconArrowDown from '~/assets/svg/icon-arrow-down.vue'
+
 export default {
   name: 'DefaultLayout',
+  components: { MgnLogo, IconArrowDown },
   data() {
     return {
       clipped: false,
@@ -90,3 +60,27 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+#mgn {
+  .v-app-bar {
+    background-color: #fff;
+    .v-toolbar__content {
+      max-width: 1262px;
+      margin: 0 auto;
+      padding: 4px 12px;
+      .header-link {
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #242424;
+
+        margin: 0 15px;
+      }
+    }
+  }
+}
+</style>

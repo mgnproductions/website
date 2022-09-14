@@ -2,3 +2,43 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: local('SpaceGrotesk'),
+    url(~assets/fonts/SpaceGrotesk-VariableFont_wght.ttf) format('truetype');
+}
+
+@keyframes flip-horizontal-bottom {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+@keyframes puff-in-center {
+  0% {
+    transform: scale(1.6);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes puff-out-center {
+  100% {
+    transform: scale(1.6);
+    filter: blur(4px);
+    opacity: 0;
+  }
+  0% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
