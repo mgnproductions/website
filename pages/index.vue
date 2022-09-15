@@ -341,18 +341,28 @@
             <IconStep3 class="mr-3" style="flex: 0 0 auto" />
             <h4>Faz upload de uma fotografia do bilhete do teu filme:</h4>
           </div>
-          <div class="d-flex pl-11 pt-7">
+          <div class="d-flex align-center pl-11 py-7">
             <v-btn
-              class="action-btn inverse mb-5"
+              class="action-btn inverse mr-5 mt-0"
               :ripple="false"
-              color="#242424"
+              @click="$refs['ticket-upload'].click()"
             >
-              LIGA À TUA CARTEIRA
+              UPLOAD
             </v-btn>
-            <p>
-              Não tens uma carteira digital? <br />
-              <a href="" class="link"> Instala aqui </a>
+            <p
+              class="normal-text mb-0"
+              :style="{ color: '#6b6b6b' }"
+              data-js-label
+            >
+              {{ uploadedTicketName | truncate(28) }}
             </p>
+            <input
+              id="ticket-upload"
+              ref="ticket-upload"
+              type="file"
+              style="visibility: hidden; width: 0px; height: 0px"
+              @change="handleTicketUpload()"
+            />
           </div>
           <v-btn
             class="action-btn inverse mb-5"
@@ -455,6 +465,7 @@ export default {
   data() {
     return {
       uploadedTicket: null,
+      uploadedTicketName: 'Nenhum ficheiro selecionado',
       location: null,
       step: 1,
       premierDate: '2022-10-05T22:00:00Z',
@@ -512,6 +523,13 @@ export default {
     }
   },
   methods: {
+    handleTicketUpload() {
+      const file = this.$refs['ticket-upload']?.files?.[0]
+      this.uploadedTicketName = file?.name
+      this.uploadedTicket = file
+
+      console.log(this.uploadedTicket)
+    },
     async connectWallet() {
       try {
         console.log('connectWallet')
