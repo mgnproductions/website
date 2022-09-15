@@ -31,6 +31,7 @@
                 <!-- <img class="carousel-img" :src="item.src" /> -->
 
                 <NuxtImg
+                  provider="static"
                   :src="`movie-frames/frame (${i - 1}).webp`"
                   alt="Movie frame"
                 />
@@ -60,7 +61,7 @@
     <v-container>
       <v-row justify="center" align="start" class="pt-15">
         <v-col cols="12" sm="12" md="12" class="pt-10">
-          <h5 style="color: #8888fd">QUEM SOMOS</h5>
+          <h5 class="font-weight-bold" style="color: #8888fd">QUEM SOMOS</h5>
         </v-col>
 
         <v-col cols="12" sm="6" md="6" class="">
@@ -105,6 +106,7 @@
             >
               <v-card class="carousel-card">
                 <NuxtImg
+                  provider="static"
                   :src="`movie-posters/poster (${i}).jpg`"
                   alt="Movie poster"
                   loading="lazy"
@@ -126,6 +128,7 @@
         <v-col cols="12" sm="4" md="4" class="member-card">
           <div class="flip-horizontal-bottom">
             <NuxtImg
+              provider="static"
               src="team/team-1.webp"
               alt="Tino Navarro"
               loading="lazy"
@@ -146,6 +149,7 @@
         <v-col cols="12" sm="4" md="4" class="member-card">
           <div>
             <NuxtImg
+              provider="static"
               src="team/team-2.webp"
               alt="Carla Silva"
               loading="lazy"
@@ -166,6 +170,7 @@
         <v-col cols="12" sm="4" md="4" class="member-card">
           <div>
             <NuxtImg
+              provider="static"
               src="team/team-3.webp"
               alt="Adriano Navarro"
               loading="lazy"
