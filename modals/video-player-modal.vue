@@ -12,10 +12,16 @@
             >
               <IconClose />
             </button>
-            <vue-core-video-player
-              src="/trailer.mov"
-              autoplay
-            ></vue-core-video-player>
+
+            <iframe
+              class="d-flex"
+              src="https://player.vimeo.com/video/746852526?h=83e6e39e80"
+              width="848"
+              height="477"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </slot>
         </section>
       </div>
