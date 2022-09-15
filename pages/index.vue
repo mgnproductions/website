@@ -30,8 +30,7 @@
               <v-card class="carousel-card" :class="{ 'on-hover': hover }">
                 <!-- <img class="carousel-img" :src="item.src" /> -->
 
-                <NuxtImg
-                  provider="static"
+                <img
                   :src="`movie-frames/frame (${i - 1}).webp`"
                   alt="Movie frame"
                 />
@@ -58,6 +57,7 @@
         </v-btn>
       </v-col>
     </v-row>
+    <span id="team"></span>
     <v-container>
       <v-row justify="center" align="start" class="pt-15">
         <v-col cols="12" sm="12" md="12" class="pt-10">
@@ -84,7 +84,7 @@
           cols="12"
           sm="6"
           md="6"
-          class="pl-sm-7"
+          class="pl-sm-12"
           style="position: relative"
         >
           <OwlCarousel
@@ -105,8 +105,7 @@
               }"
             >
               <v-card class="carousel-card">
-                <NuxtImg
-                  provider="static"
+                <img
                   :src="`movie-posters/poster (${i}).jpg`"
                   alt="Movie poster"
                   loading="lazy"
@@ -117,7 +116,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <span id="team"></span>
     <v-container>
       <v-row justify="center" align="center" class="pt-15">
         <v-col cols="12" sm="12" md="12">
@@ -127,8 +125,7 @@
       <v-row justify="center" align="center" class="section-team mt-8">
         <v-col cols="12" sm="4" md="4" class="member-card">
           <div class="flip-horizontal-bottom">
-            <NuxtImg
-              provider="static"
+            <img
               src="team/team-1.webp"
               alt="Tino Navarro"
               loading="lazy"
@@ -148,8 +145,7 @@
         </v-col>
         <v-col cols="12" sm="4" md="4" class="member-card">
           <div>
-            <NuxtImg
-              provider="static"
+            <img
               src="team/team-2.webp"
               alt="Carla Silva"
               loading="lazy"
@@ -169,8 +165,7 @@
         </v-col>
         <v-col cols="12" sm="4" md="4" class="member-card">
           <div>
-            <NuxtImg
-              provider="static"
+            <img
               src="team/team-3.webp"
               alt="Adriano Navarro"
               loading="lazy"
@@ -190,12 +185,12 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-container id="community" fluid class="section4 mt-15 pt-6">
-      <v-row justify="center" align="start" class="pt-sm-14">
+    <v-container id="community" fluid class="section4 mt-15 pt-6 pb-16">
+      <v-row justify="center" align="start" class="pt-sm-14 pb-6">
         <v-col cols="12" sm="6" md="6" class="pr-sm-16">
           <h5 class="white--text mb-6">COMUNIDADE</h5>
           <h2 class="white--text mb-6">A Comunidade MGN</h2>
-          <p class="white--text normal-text">
+          <p class="white--text normal-text mb-10">
             A Comunidade MGN Filmes é uma iniciativa promovida pela MGN Filmes
             Lda, com o objetivo de abrir a participação nas várias atividades
             nas quais a produtora se envolve a um núcleo alargado de pessoas,
@@ -289,8 +284,8 @@
     </v-container>
     <v-container id="tokens" fluid class="section6 mt-15 pt-15">
       <v-row justify="center">
-        <v-col cols="12" sm="6" md="6" class="text-left">
-          <div class="py-6">
+        <v-col cols="12" sm="6" md="6" class="text-left pr-sm-10">
+          <div class="pb-6">
             <v-img
               contain
               class="mx-0 mb-5"
@@ -373,7 +368,7 @@
             class="action-btn inverse mb-5"
             :disabled="isMintDisabled"
             :ripple="false"
-            color="#242424"
+            @change="submit()"
           >
             RECEBE MGN TOKENS
           </v-btn>
@@ -528,6 +523,7 @@ export default {
     }
   },
   methods: {
+    submit() {},
     handleTicketUpload() {
       const file = this.$refs['ticket-upload']?.files?.[0]
       this.uploadedTicketName = file?.name

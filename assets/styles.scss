@@ -82,7 +82,9 @@
     }
     &.inverse {
       background-color: transparent;
-      color: rgb(36, 36, 36);
+      .v-btn__content {
+        color: rgb(36, 36, 36);
+      }
     }
     &.v-btn--disabled {
       background-color: #eae6e6 !important;
