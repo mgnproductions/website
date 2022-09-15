@@ -9,8 +9,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - mgn-website',
-    title: 'mgn-website',
+    titleTemplate: '%s MGN Filmes Community',
+    title: '',
     htmlAttrs: {
       lang: 'en',
     },
