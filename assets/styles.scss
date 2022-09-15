@@ -1,12 +1,11 @@
 * {
-  font-family: SpaceGrotesk;
+  font-family: 'SpaceGrotesk';
 }
-
 #mgn {
   // ###### FONTS ######
   h1 {
     font-size: 60px;
-    font-weight: bold;
+    font-weight: 700;
   }
   h2 {
     font-size: 50px;
@@ -77,9 +76,20 @@
     padding: 12px 22px;
     height: 42px;
     background-color: rgb(36, 36, 36);
-    border-color: rgb(36, 36, 36);
+    border: solid 1px rgb(36, 36, 36);
     .v-btn__content {
       color: white;
+    }
+    &.inverse {
+      background-color: transparent;
+      color: rgb(36, 36, 36);
+    }
+    &.v-btn--disabled {
+      background-color: #eae6e6 !important;
+      border-color: #eae6e6 !important;
+      .v-btn__content {
+        color: #d1d1d1 !important;
+      }
     }
   }
 }
